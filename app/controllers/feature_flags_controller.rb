@@ -1,6 +1,7 @@
 class FeatureFlagsController < ApplicationController
   layout FeatureFlags.configuration.layout.downcase
   before_filter :load_features, :only => [:index,:create,:update,:destroy]
+  load_and_authorize_resource
 
   def index
   end
