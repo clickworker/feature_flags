@@ -4,7 +4,7 @@ class FeatureFlagsController < ApplicationController
   before_filter :get_feature, :only => [:edit, :update, :destroy]
 
   def index
-    authorize! :manage, Feature
+    authorize! :read, Feature
   end
 
   def new
