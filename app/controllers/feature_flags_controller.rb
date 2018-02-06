@@ -1,7 +1,7 @@
 class FeatureFlagsController < ApplicationController
   layout FeatureFlags.configuration.layout.downcase
-  before_filter :load_features, :only => [:index,:create,:update,:destroy]
-  before_filter :get_feature, :only => [:edit, :update, :destroy]
+  before_action :load_features, :only => [:index,:create,:update,:destroy]
+  before_action :get_feature, :only => [:edit, :update, :destroy]
 
   def index
     authorize! :read, Feature
